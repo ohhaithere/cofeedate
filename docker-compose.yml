@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  pg_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=stage
+      - PGDATA=/var/lib/postgresql/data/db-files/
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+  coffeedate:
+    image: ohhaithere/cofeedate
+    ports:
+    - 8080:8080

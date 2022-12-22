@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: coffee-date
+  data-source:
+    url: jdbc:postgresql://pg_db:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    parameters:
+      textColumnType: TEXT
+    changeLog: "classpath:db/changelog/changelog-main.xml"
