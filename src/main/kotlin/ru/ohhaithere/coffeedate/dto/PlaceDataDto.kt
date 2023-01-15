@@ -8,7 +8,8 @@ data class PlaceDataDto(
     var address: String,
     var description: String,
     var logoUrl: String,
-    var map: String,
-    var tags: String
+    var mapUrl: String,
+    var tags: String,
+    var tables: List<TableDto>
 
 )

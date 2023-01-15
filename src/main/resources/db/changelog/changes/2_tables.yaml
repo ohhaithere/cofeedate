@@ -1,0 +1,26 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  2
+       author:  ohhaithere
+       changes:
+         -  createTable:
+              tableName:  table
+              columns:
+                -  column:
+                     name:  id
+                     type:  UUID
+                -  column:
+                     name:  place_id
+                     type:  UUID
+                -  column:
+                     name:  x
+                     type:  integer
+                -  column:
+                     name:  y
+                     type:  integer
+         - addColumn:
+             tableName: place
+             columns:
+               - column:
+                   name: map_url
+                   type: varchar

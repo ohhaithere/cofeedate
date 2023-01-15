@@ -16,5 +16,6 @@ data class Place(
     var description: String,
     var tags: String,
     var logoUrl: String,
-    var created: LocalDateTime
+    var created: LocalDateTime,
+    var mapUrl: String
 )
