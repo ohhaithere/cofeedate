@@ -14,6 +14,6 @@ services:
     ports:
       - 5432:5432
   coffeedate:
-    image: ohhaithere/cofeedate
+    image: ohhaithere/cofeedate:0.2
     ports:
     - 8080:8080

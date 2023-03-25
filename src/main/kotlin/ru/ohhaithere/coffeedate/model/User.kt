@@ -18,6 +18,7 @@ class User(
     var description: String?,
     var tags: String?,
     var photoUrl: String?,
+    var searchGoal: String,
     var birthdate: LocalDate,
     var joined: LocalDateTime? = null
 )

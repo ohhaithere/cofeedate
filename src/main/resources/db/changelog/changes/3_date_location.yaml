@@ -1,0 +1,14 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  2
+       author:  ohhaithere
+       changes:
+        - addColumn:
+           tableName: date
+           columns:
+             - column:
+                 name: x
+                 type: float
+             - column:
+                 name: y
+                 type: float

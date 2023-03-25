@@ -18,5 +18,7 @@ class Date (
     val tableId: UUID? = null,
     var purpose: String,
     val status: String,
+    val x: Float,
+    val y: Float,
     var time: LocalDateTime
 )
