@@ -16,6 +16,7 @@ class UserController(val userService: UserService) {
         return userService.save(createDto);
     }
 
+
     @PutMapping("/{id}")
     fun update(@RequestBody dataDto: UserDataDto, @PathVariable id: UUID): UserDataDto {
         return userService.update(dataDto, id);

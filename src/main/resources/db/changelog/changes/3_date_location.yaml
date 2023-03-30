@@ -1,14 +1,11 @@
 databaseChangeLog:
   -  changeSet:
-       id:  2
+       id:  3
        author:  ohhaithere
        changes:
         - addColumn:
            tableName: date
            columns:
              - column:
-                 name: x
-                 type: float
-             - column:
-                 name: y
-                 type: float
+                 name: location
+                 type: point

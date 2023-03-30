@@ -1,0 +1,17 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  5
+       author:  ohhaithere
+       changes:
+         - addColumn:
+             tableName: user
+             columns:
+               - column:
+                   name: phone
+                   type: varchar
+         - addColumn:
+             tableName: user
+             columns:
+               - column:
+                   name: registered
+                   type: bool

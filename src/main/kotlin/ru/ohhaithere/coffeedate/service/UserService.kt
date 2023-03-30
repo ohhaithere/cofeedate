@@ -14,6 +14,9 @@ class UserService(private var repository: UserRepository,
 ) {
 
     fun save(createDto: UserCreateDto): UserCreateDto {
+        if (createDto.phone != null) {
+
+        }
         val user = mapper.convertUserToModel(createDto);
         user.id = UUID.randomUUID()
         user.joined = LocalDateTime.now()
@@ -33,6 +36,10 @@ class UserService(private var repository: UserRepository,
 
     fun get(id: UUID): UserDataDto {
         return mapper.convertDataToDto(repository.getById(id));
+    }
+
+    fun saveByPhone(createDto: UserCreateDto): UserCreateDto {
+
     }
 
 

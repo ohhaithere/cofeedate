@@ -12,16 +12,16 @@ import java.util.*
 class PlaceService(private var mapper: PlaceMapper,
                    private var repository: PlaceRepository) {
 
-    fun save(dataDto: PlaceCreateDto): PlaceCreateDto {
-        val place = mapper.convertCreateToModel(dataDto);
+    fun save(placeDto: PlaceCreateDto): PlaceCreateDto {
+        val place = mapper.convertCreateToModel(placeDto);
         place.id = UUID.randomUUID()
         place.created = LocalDateTime.now()
         repository.save(place);
         return mapper.convertCreateToDto(place);
     }
 
-    fun update(dataDto: PlaceDataDto): PlaceDataDto {
-        val place = mapper.convertDataToModel(dataDto);
+    fun update(placeDto: PlaceDataDto): PlaceDataDto {
+        val place = mapper.convertDataToModel(placeDto);
         repository.save(place);
         return mapper.convertDataToDto(place);
     }

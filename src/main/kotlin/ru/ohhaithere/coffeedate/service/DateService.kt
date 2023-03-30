@@ -33,4 +33,8 @@ class DateService(private var mapper: DateMapper,
         return mapper.convertToDtos(repository.findAll());
     }
 
+    fun getDatesNearby(y: Float, x: Float) {
+        
+    }
+
 }

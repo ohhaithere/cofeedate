@@ -1,5 +1,6 @@
 package ru.ohhaithere.coffeedate.dto
 
+import org.springframework.data.geo.Point
 import java.util.*
 
 data class PlaceDataDto(
@@ -10,6 +11,7 @@ data class PlaceDataDto(
     var logoUrl: String,
     var mapUrl: String,
     var tags: String,
-    var tables: List<TableDto>
+    var tables: List<TableDto>,
+    var location: Point
 
 )
