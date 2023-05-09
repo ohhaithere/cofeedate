@@ -10,16 +10,16 @@ import java.util.*
 
 @Component
 class UserService(private var repository: UserRepository,
-                  private var mapper: UserMapper
-) {
+                  private var smsService: SmsService,
+                  private var mapper: UserMapper) {
 
     fun save(createDto: UserCreateDto): UserCreateDto {
-        if (createDto.phone != null) {
-
-        }
-        val user = mapper.convertUserToModel(createDto);
+        val user = mapper.convertUserToModel(createDto)
+        val code = smsService.sendSmsWithCode(createDto)
         user.id = UUID.randomUUID()
         user.joined = LocalDateTime.now()
+        user.code = code
+        user.registered = false
         repository.save(user);
         return mapper.convertUserToDto(user);
     }
@@ -37,10 +37,5 @@ class UserService(private var repository: UserRepository,
     fun get(id: UUID): UserDataDto {
         return mapper.convertDataToDto(repository.getById(id));
     }
-
-    fun saveByPhone(createDto: UserCreateDto): UserCreateDto {
-
-    }
-
 
 }

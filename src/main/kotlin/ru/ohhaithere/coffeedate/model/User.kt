@@ -11,16 +11,17 @@ import javax.persistence.Table
 @Table(name = "user", schema = "public")
 class User(
     @Id var id: UUID? = null,
-    val name: String,
-    val email: String,
-    val password: String,
+    val name: String?,
+    val email: String?,
+    val password: String?,
     var workplace: String?,
     var description: String?,
     var tags: String?,
     var photoUrl: String?,
     var phone: String,
-    var searchGoal: String,
-    var birthdate: LocalDate,
-    var registered: Boolean,
+    var searchGoal: String?,
+    var birthdate: LocalDate?,
+    var registered: Boolean?,
+    var code: String?,
     var joined: LocalDateTime? = null
 )

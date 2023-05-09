@@ -1,14 +1,14 @@
 package ru.ohhaithere.coffeedate.client
 
+import feign.Headers
 import org.springframework.cloud.openfeign.FeignClient
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.*
 import ru.ohhaithere.coffeedate.client.dto.SmsSendDto
 
-@FeignClient(value = "smsclient", url = "https://frostmasterwork@gmail.com:z5ctNVpukUEAgWq_5c0kJhXjVtqu9L@gate.smsaero.ru/v2")
+@FeignClient(value = "smsClient", url = "http://gate.smsaero.ru/v2")
 interface SmsClient {
 
-    @PostMapping("/sms/send")
-    fun sendSms(@RequestBody dto: SmsSendDto)
+    @GetMapping("/sms/send?number={phone}&text={text}&sign=SMS+Aero")
+    fun sendSms(@RequestHeader("Authorization") header: String, @PathVariable phone: String, @PathVariable text: String)
 
 }
