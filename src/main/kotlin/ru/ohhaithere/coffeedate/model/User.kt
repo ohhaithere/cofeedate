@@ -11,7 +11,7 @@ import javax.persistence.Table
 @Table(name = "user", schema = "public")
 class User(
     @Id var id: UUID? = null,
-    val name: String?,
+    var name: String?,
     val email: String?,
     val password: String?,
     var workplace: String?,

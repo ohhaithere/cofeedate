@@ -1,10 +1,8 @@
 package ru.ohhaithere.coffeedate.mapper
 
+import org.mapstruct.*
 import ru.ohhaithere.coffeedate.dto.UserCreateDto
 import ru.ohhaithere.coffeedate.model.User
-import org.mapstruct.InheritInverseConfiguration
-import org.mapstruct.InjectionStrategy
-import org.mapstruct.Mapper
 import ru.ohhaithere.coffeedate.dto.UserDataDto
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
@@ -14,12 +12,18 @@ interface UserMapper {
     @InheritInverseConfiguration
     fun convertUserToModel(userCreate: UserCreateDto): User
 
+    @Mapping(target = "photoUrl", qualifiedByName = ["stringToArray"])
     fun convertDataToDto(user: User): UserDataDto
-    @InheritInverseConfiguration
-    fun convertDataToModel(userCreate: UserDataDto): User
 
     fun convertToDtos(users: List<User>): List<UserCreateDto> {
         return users.map { t -> convertUserToDto(t) }
     }
 
+    companion object {
+        @Named("stringToArray")
+        @JvmStatic
+        fun stringToArray(photos: String): List<String> {
+            return photos.split(",")
+        }
+    }
 }

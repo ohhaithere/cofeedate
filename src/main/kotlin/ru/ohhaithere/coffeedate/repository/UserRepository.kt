@@ -7,4 +7,7 @@ import java.util.*
 
 @Repository
 interface UserRepository: JpaRepository<User, UUID> {
+
+    fun findByIdAndCode(id: UUID, code: String): User
+
 }
