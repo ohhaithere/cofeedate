@@ -7,14 +7,15 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
   data-source:
-    url: jdbc:postgresql://pg_db:5432/postgres
+    url: jdbc:postgresql://158.160.52.151:5432/postgres
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
   liquibase:
     parameters:
       textColumnType: TEXT
-    changeLog: "classpath:db/changelog/changelog-main.xml"
+    default-schema: public
+    change-log: "classpath:/db/changelog/changelog-main.xml"
 client:
   sms: https://frostmasterwork@gmail.com:z5ctNVpukUEAgWq_5c0kJhXjVtqu9L@gate.smsaero.ru/v2
   login: frostmasterwork@gmail.com

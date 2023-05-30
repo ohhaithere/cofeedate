@@ -174,7 +174,7 @@
                 </executions>
                 <configuration>
                     <image>
-                        <name>ohhaithere/coffeedate:0.14</name>
+                        <name>ohhaithere/coffeedate:0.18</name>
                     </image>
                     <layers>
                         <enabled>true</enabled>
