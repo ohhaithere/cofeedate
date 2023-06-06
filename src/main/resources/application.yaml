@@ -7,7 +7,7 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
   data-source:
-    url: jdbc:postgresql://pg_db:5432/postgres
+    url: jdbc:postgresql://158.160.52.151:5432/postgres
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -19,3 +19,14 @@ client:
   sms: https://frostmasterwork@gmail.com:z5ctNVpukUEAgWq_5c0kJhXjVtqu9L@gate.smsaero.ru/v2
   login: frostmasterwork@gmail.com
   password: z5ctNVpukUEAgWq_5c0kJhXjVtqu9L
+server:
+  port: 8081
+keycloak:
+  auth-server-url: http://158.160.52.151:8888
+  realm: coffee-date
+  resource: test-client
+  public-client: true
+  use-resource-role-mappings: true
+  ssl-required: external
+  connection-timeout: 9000
+keycloak-get-token: http://158.160.52.151:8888/realms/coffee-date/protocol/openid-connect/token

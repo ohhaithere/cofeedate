@@ -7,13 +7,14 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=stage
+#      - POSTGRES_DB=stage
+      - POSTGRES_MULTIPLE_DATABASES=stage,keycloak_db
       - PGDATA=/var/lib/postgresql/data/db-files/
     volumes:
       - ./postgres-data:/var/lib/postgresql/data/
     ports:
       - 5432:5432
-  coffeedate:
-    image: ohhaithere/cofeedate:0.2
-    ports:
-    - 8080:8080
+#  coffeedate:
+#    image: ohhaithere/cofeedate:0.2
+#    ports:
+#    - 8080:8080
