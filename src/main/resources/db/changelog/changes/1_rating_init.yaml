@@ -5,6 +5,7 @@ databaseChangeLog:
        changes:
          -  createTable:
               tableName:  date
+              ifNotExists: true
               columns:
                 -  column:
                      name:  id
@@ -16,7 +17,7 @@ databaseChangeLog:
                      name:  user_id2
                      type:  UUID
                 -  column:
-                     name:  place_Id
+                     name:  place_id
                      type:  UUID
                 - column:
                     name: status
@@ -29,6 +30,7 @@ databaseChangeLog:
                     type: timestamp
          - createTable:
                tableName: place
+               ifNotExists: true
                columns:
                  - column:
                      name: id
@@ -56,6 +58,7 @@ databaseChangeLog:
                      type: timestamp
          - createTable:
                tableName: coffeedate
+               ifNotExists: true
                columns:
                  - column:
                      name: id
@@ -68,10 +71,14 @@ databaseChangeLog:
                      type: varchar
          - createTable:
                tableName: user
+               ifNotExists: true
                columns:
                  - column:
                      name: id
                      type: UUID
+                 - column:
+                     name: sex
+                     type: varchar
                  - column:
                      name: name
                      type: varchar
@@ -95,4 +102,7 @@ databaseChangeLog:
                      type: varchar
                  - column:
                      name: joined
+                     type: timestamp
+                 - column:
+                     name: birthdate
                      type: timestamp

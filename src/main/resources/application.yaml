@@ -7,16 +7,38 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
   data-source:
-    url: jdbc:postgresql://158.160.52.151:5432/postgres
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://158.160.55.62:5432/postgres
+    username: ohhaithere
+    password: 2201NirvanaSucks
     driver-class-name: org.postgresql.Driver
   liquibase:
     parameters:
       textColumnType: TEXT
     default-schema: public
     change-log: "classpath:/db/changelog/changelog-main.xml"
+  rabbitmq:
+    host: 158.160.52.151
+    port: 61613
+    username: admin
+    password: admin
 client:
-  sms: https://frostmasterwork@gmail.com:z5ctNVpukUEAgWq_5c0kJhXjVtqu9L@gate.smsaero.ru/v2
+  sms: http://gate.smsaero.ru/v2
   login: frostmasterwork@gmail.com
   password: z5ctNVpukUEAgWq_5c0kJhXjVtqu9L
+
+keycloak:
+  realm: master
+  auth-server-url: http://158.160.55.62:8888/
+  #use external in production
+
+  #name of the client
+  resource: zhopa
+  # replace with your client's secret
+  credentials:
+    secret: LmV0DdYPxiai46LjgzadIpyOrdEBnEz7
+  use-resource-role-mappings: false
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+

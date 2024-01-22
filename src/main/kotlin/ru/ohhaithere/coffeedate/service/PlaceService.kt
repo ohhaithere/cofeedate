@@ -1,13 +1,14 @@
 package ru.ohhaithere.coffeedate.service
 
 import org.springframework.stereotype.Component
-import ru.ohhaithere.coffeedate.dto.PlaceCreateDto
-import ru.ohhaithere.coffeedate.dto.PlaceDataDto
+import ru.ohhaithere.coffeedate.dto.place.PlaceCreateDto
+import ru.ohhaithere.coffeedate.dto.place.PlaceDataDto
 import ru.ohhaithere.coffeedate.mapper.PlaceMapper
 import ru.ohhaithere.coffeedate.repository.PlaceRepository
 import java.time.LocalDateTime
 import java.util.*
 
+//TODO: нужно ли?
 @Component
 class PlaceService(private var mapper: PlaceMapper,
                    private var repository: PlaceRepository) {

@@ -6,6 +6,7 @@ import ru.ohhaithere.coffeedate.mapper.PreferenceMapper
 import ru.ohhaithere.coffeedate.repository.PreferenceRepository
 import java.util.*
 
+//TODO: нужно ли?
 @Component
 class PreferenceService(private var mapper: PreferenceMapper,
                         private var repository: PreferenceRepository) {

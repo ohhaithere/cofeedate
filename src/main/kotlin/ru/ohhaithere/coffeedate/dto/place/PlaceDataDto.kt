@@ -1,7 +1,7 @@
-package ru.ohhaithere.coffeedate.dto
+package ru.ohhaithere.coffeedate.dto.place
 
 import org.springframework.data.geo.Point
-import java.util.*
+import ru.ohhaithere.coffeedate.dto.TableDto
 
 data class PlaceDataDto(
 

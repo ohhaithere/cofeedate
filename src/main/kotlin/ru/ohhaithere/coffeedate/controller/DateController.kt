@@ -1,9 +1,10 @@
 package ru.ohhaithere.coffeedate.controller
 
 import org.springframework.web.bind.annotation.*
-import ru.ohhaithere.coffeedate.dto.DateDto
+import ru.ohhaithere.coffeedate.dto.date.DateDto
+import ru.ohhaithere.coffeedate.dto.date.CreateDateDto
+import ru.ohhaithere.coffeedate.dto.date.DateDataDto
 import ru.ohhaithere.coffeedate.service.DateService
-import java.util.*
 
 @RestController
 @CrossOrigin
@@ -11,19 +12,19 @@ import java.util.*
 class DateController(val service: DateService) {
 
     @PostMapping
-    fun save(@RequestBody dto: DateDto): DateDto {
-        return service.save(dto);
+    fun save(@RequestBody dto: CreateDateDto): CreateDateDto {
+        return service.createDate(dto);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("")
     fun update(@RequestBody dto: DateDto): DateDto {
         return service.update(dto);
     }
 
 
-    @GetMapping("/{id}")
-    fun get(@PathVariable id: UUID): DateDto {
-        return service.get(id);
+    @GetMapping("/{x}/{y}/")
+    fun get(@PathVariable x: Float, @PathVariable y: Float): List<DateDataDto> {
+        return service.get(x, y);
     }
 
     @GetMapping

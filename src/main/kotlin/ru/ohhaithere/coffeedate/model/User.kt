@@ -12,8 +12,9 @@ import javax.persistence.Table
 class User(
     @Id var id: UUID? = null,
     var name: String?,
+    var sex: String?,
     val email: String?,
-    val password: String?,
+    var password: String?,
     var workplace: String?,
     var description: String?,
     var tags: String?,

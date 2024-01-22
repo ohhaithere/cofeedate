@@ -6,6 +6,7 @@ import ru.ohhaithere.coffeedate.mapper.TableMapper
 import ru.ohhaithere.coffeedate.repository.TableRepository
 import java.util.*
 
+//TODO: удалить
 @Component
 class TableService(private var repository: TableRepository,
                    private var mapper: TableMapper) {

@@ -5,6 +5,7 @@ import ru.ohhaithere.coffeedate.dto.PreferenceDto
 import ru.ohhaithere.coffeedate.service.PreferenceService
 import java.util.*
 
+//TODO: не нужно
 @RestController
 @CrossOrigin
 @RequestMapping("/preference")

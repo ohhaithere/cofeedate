@@ -9,5 +9,5 @@ import java.util.*
 interface UserRepository: JpaRepository<User, UUID> {
 
     fun findByIdAndCode(id: UUID, code: String): User
-
+    fun findFirstByPhone(phone: String): User
 }

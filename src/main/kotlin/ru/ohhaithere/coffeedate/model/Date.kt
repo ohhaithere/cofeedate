@@ -7,7 +7,7 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "coffeedate", schema = "public")
+@Table(name = "date", schema = "public")
 class Date (
 
     @Id

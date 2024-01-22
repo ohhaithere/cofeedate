@@ -1,0 +1,50 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  1
+       author:  ohhaithere
+       changes:
+         -  createTable:
+              tableName:  chat_message
+              columns:
+                -  column:
+                     name:  id
+                     type:  varchar
+                - column:
+                    name: chat_id
+                    type: varchar
+                - column:
+                    name: sender_id
+                    type: varchar
+                - column:
+                    name: recipient_id
+                    type: varchar
+                - column:
+                    name: sender_name
+                    type: varchar
+                - column:
+                    name: recipient_name
+                    type: varchar
+                - column:
+                    name: content
+                    type: varchar
+                - column:
+                    name: timestamp
+                    type: timestamp
+                - column:
+                    name: status
+                    type: varchar
+         - createTable:
+             tableName: chat_room
+             columns:
+               - column:
+                   name: id
+                   type: varchar
+               - column:
+                   name: chat_id
+                   type: varchar
+               - column:
+                   name: sender_id
+                   type: varchar
+               - column:
+                   name: recipient_name
+                   type: varchar

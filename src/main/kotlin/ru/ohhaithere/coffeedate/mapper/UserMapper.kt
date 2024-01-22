@@ -1,9 +1,9 @@
 package ru.ohhaithere.coffeedate.mapper
 
 import org.mapstruct.*
-import ru.ohhaithere.coffeedate.dto.UserCreateDto
+import ru.ohhaithere.coffeedate.dto.user.UserCreateDto
 import ru.ohhaithere.coffeedate.model.User
-import ru.ohhaithere.coffeedate.dto.UserDataDto
+import ru.ohhaithere.coffeedate.dto.user.UserDataDto
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 interface UserMapper {

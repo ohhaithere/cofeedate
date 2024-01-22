@@ -3,8 +3,8 @@ package ru.ohhaithere.coffeedate.mapper
 import org.mapstruct.InheritInverseConfiguration
 import org.mapstruct.InjectionStrategy
 import org.mapstruct.Mapper
-import ru.ohhaithere.coffeedate.dto.PlaceCreateDto
-import ru.ohhaithere.coffeedate.dto.PlaceDataDto
+import ru.ohhaithere.coffeedate.dto.place.PlaceCreateDto
+import ru.ohhaithere.coffeedate.dto.place.PlaceDataDto
 import ru.ohhaithere.coffeedate.model.Place
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)

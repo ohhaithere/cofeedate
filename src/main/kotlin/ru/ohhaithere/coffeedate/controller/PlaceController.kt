@@ -1,11 +1,12 @@
 package ru.ohhaithere.coffeedate.controller
 
 import org.springframework.web.bind.annotation.*
-import ru.ohhaithere.coffeedate.dto.PlaceCreateDto
-import ru.ohhaithere.coffeedate.dto.PlaceDataDto
+import ru.ohhaithere.coffeedate.dto.place.PlaceCreateDto
+import ru.ohhaithere.coffeedate.dto.place.PlaceDataDto
 import ru.ohhaithere.coffeedate.service.PlaceService
 import java.util.*
 
+//TODO: пока не нужно
 @RestController
 @CrossOrigin
 @RequestMapping("/place")
