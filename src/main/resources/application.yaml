@@ -40,5 +40,7 @@ keycloak:
 logging:
   level:
     org.springframework.security: DEBUG
+base:
+  url: http://158.160.55.62:8080/download/
 
 

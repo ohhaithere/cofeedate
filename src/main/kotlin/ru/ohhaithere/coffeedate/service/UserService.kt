@@ -59,7 +59,7 @@ class UserService(private var repository: UserRepository,
         user.tags = dataDto.tags
         user.workplace = dataDto.workplace
         user.sex = dataDto.sex
-        //user.birthdate = dataDto.birthdate
+        user.birthdate = dataDto.birthdate
         user.name = dataDto.name
         repository.save(user);
         return mapper.convertDataToDto(user);

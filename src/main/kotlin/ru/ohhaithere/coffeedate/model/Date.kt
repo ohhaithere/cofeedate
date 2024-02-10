@@ -15,9 +15,9 @@ class Date (
     var userId1: UUID? = null,
     val userId2: UUID? = null,
     val placeId: UUID? = null,
-    var purpose: String,
-    val status: String,
-    val x: Float,
-    val y: Float,
-    var time: LocalDateTime
+    var purpose: String? = null,
+    val status: String? = null,
+    val x: Float? = null,
+    val y: Float? = null,
+    var time: LocalDateTime? = null
 )

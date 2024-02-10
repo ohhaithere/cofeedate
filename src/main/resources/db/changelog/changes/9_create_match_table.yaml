@@ -1,0 +1,23 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  1
+       author:  ohhaithere
+       changes:
+         -  createTable:
+              tableName:  match
+              columns:
+                -  column:
+                     name:  id
+                     type:  varchar
+                - column:
+                    name: date_id
+                    type: varchar
+                - column:
+                    name: user_id
+                    type: varchar
+                - column:
+                    name: status
+                    type: varchar
+                - column:
+                    name: time
+                    type: timestamp

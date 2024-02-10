@@ -3,6 +3,7 @@ package ru.ohhaithere.coffeedate.controller
 import jakarta.ws.rs.BadRequestException
 import org.keycloak.admin.client.Keycloak
 import org.keycloak.representations.AccessTokenResponse
+import org.springframework.format.annotation.DateTimeFormat
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
@@ -40,7 +41,7 @@ class UserController(val userService: UserService ) {
                @RequestParam("tags") tags: String?,
                @RequestParam("aboutYourself") aboutYourself: String?,
                @RequestParam("sex") sex: String?,
-               @RequestParam("birthdate") birthdate: String,
+               @RequestParam("birthdate") @DateTimeFormat(pattern = "dd.MM.yyyy") birthdate: LocalDate,
                @RequestParam("name") name: String?, @PathVariable userId: UUID): UserDataDto {
         return userService.update(UserUpdateDataDto(workplace, tags, aboutYourself, photos, name, sex, birthdate), userId);
     }

@@ -13,5 +13,6 @@ data class Match(
     var id: UUID? = null,
     var dateId: UUID? = null,
     var userId: UUID? = null,
+    var status: String? = null,
     var time: LocalDateTime? = null
 )

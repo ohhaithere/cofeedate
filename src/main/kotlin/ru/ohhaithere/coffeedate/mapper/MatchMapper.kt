@@ -15,6 +15,7 @@ interface MatchMapper {
     @InheritInverseConfiguration
     fun convertToModel(date: MatchDto): Match
 
+
     fun convertToDtos(matches: List<Match>): List<MatchDto> {
         return matches.map { t -> convertToDto(t) }
     }
