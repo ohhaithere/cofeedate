@@ -21,7 +21,7 @@ class DateService(private var mapper: DateMapper,
         val date = mapper.convertCreateDateToModel(dto);
         date.id = UUID.randomUUID()
         date.time = LocalDateTime.now()
-        repository.save(date);
+        repository.save(date);так
         return mapper.covertToCreateDateDto(date);
     }
 

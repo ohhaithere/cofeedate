@@ -37,6 +37,7 @@ keycloak:
   credentials:
     secret: LmV0DdYPxiai46LjgzadIpyOrdEBnEz7
   use-resource-role-mappings: false
+  ssl-required: none
 logging:
   level:
     org.springframework.security: DEBUG

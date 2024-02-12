@@ -29,7 +29,7 @@ class KeycloakSecurityConfig : KeycloakWebSecurityConfigurerAdapter() {
         http.authorizeRequests()
             .antMatchers("/user/**").permitAll()
             .antMatchers("/date/**").permitAll()
-            .antMatchers("/match/**").permitAll()
+            .antMatchers("/match/**").hasRole("zhopa-autist")
             .antMatchers("/download/**").permitAll()
             .anyRequest()
             .permitAll()

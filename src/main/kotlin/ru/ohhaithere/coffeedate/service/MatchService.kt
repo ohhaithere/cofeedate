@@ -17,20 +17,11 @@ import java.time.Period
 import java.util.UUID
 import java.util.stream.Collectors
 
-@Service
-class UrlHelper {
-    @Value("\${base.url}")
-    val url= ""
-}
-
 @Component
 class MatchService(private var mapper: MatchMapper,
                    private var matchRepository: MatchRepository,
                    private var userRepository: UserRepository,
-                   private var dateRepository: DateRepository, ) {
-
-    lateinit var urlHelper: UrlHelper
-
+                   private var dateRepository: DateRepository) {
 
     fun save(matchDto: MatchDto): MatchDto {
         val match = mapper.convertToModel(matchDto)
@@ -40,9 +31,12 @@ class MatchService(private var mapper: MatchMapper,
         return mapper.convertToDto(match)
     }
 
-    fun get(x: Float, y: Float): List<MatchCardDto> {
+    fun get(x: Float, y: Float, userId: UUID): List<MatchCardDto> {
         var dates = dateRepository.findAll()
         var userIds = dates.stream().map{x -> x.userId1}.collect(Collectors.toList())
+        var matchesMade = matchRepository.getMatchesByUserId(userId)
+        var userIdsToDelete = matchesMade.stream().map{x -> x.userId}.collect(Collectors.toList())
+        userIds.removeAll(userIdsToDelete)
         var users = userRepository.findByIdIn(userIds)
         var matches = users.stream().map { x ->
              MatchCardDto(

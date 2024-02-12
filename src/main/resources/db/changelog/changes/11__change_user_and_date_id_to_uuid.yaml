@@ -1,0 +1,13 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  11
+       author:  ohhaithere
+       changes:
+         -  modifyDataType:
+              columnName: date_id
+              newDataType: uuid
+              tableName: match
+         - modifyDataType:
+             columnName: user_id
+             newDataType: uuid
+             tableName: match
